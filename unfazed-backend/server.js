@@ -9,6 +9,13 @@ const { DEFAULT_CONFIGS } = require('./src/services/entitlementService');
 
 const PORT = process.env.PORT || 5000;
 
+
+
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  credentials: true
+}));
+
 // Connect to MongoDB
 connectDB().then(async () => {
   // Ensure default tier configs exist in DB
