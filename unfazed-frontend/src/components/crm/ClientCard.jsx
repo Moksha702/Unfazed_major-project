@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Calendar, CreditCard, FileText, CheckCircle2, ShieldAlert, ArrowLeft } from 'lucide-react';
 import Button from '../common/Button';
 
@@ -21,13 +21,13 @@ const ClientCard = ({ clientDetail, onBack, onStartChat }) => {
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
-          <div className="w-14 h-14 rounded-2xl bg-indigo-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+          <div className="w-14 h-14 rounded-2xl bg-orange-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
             {client.name.charAt(0)}
           </div>
           <div>
             <div className="flex items-center gap-2">
               <h2 className="text-2xl font-black">{client.name}</h2>
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">
                 {client.status}
               </span>
             </div>
@@ -42,7 +42,7 @@ const ClientCard = ({ clientDetail, onBack, onStartChat }) => {
             onClick={() => onStartChat(client)}
             variant="primary"
             size="sm"
-            className="bg-indigo-500 hover:bg-indigo-600"
+            className="bg-amber-500 hover:bg-orange-500"
           >
             Open Live Chat
           </Button>
@@ -62,7 +62,7 @@ const ClientCard = ({ clientDetail, onBack, onStartChat }) => {
             onClick={() => setActiveTab(tab.id)}
             className={`py-3.5 px-4 text-xs font-bold border-b-2 transition-all cursor-pointer ${
               activeTab === tab.id
-                ? 'border-indigo-600 text-indigo-600'
+                ? 'border-orange-500 text-orange-500'
                 : 'border-transparent text-slate-500 hover:text-slate-900'
             }`}
           >
@@ -101,12 +101,12 @@ const ClientCard = ({ clientDetail, onBack, onStartChat }) => {
 
               <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
                 <h3 className="text-sm font-bold text-slate-900 mb-3 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <CheckCircle2 className="w-4 h-4 text-amber-600" />
                   Informed Consent & Compliance Record
                 </h3>
                 {client.consentAgreed ? (
                   <div className="text-xs text-slate-600 space-y-1">
-                    <p className="font-medium text-emerald-700">✓ Digital Telehealth Consent Form Executed</p>
+                    <p className="font-medium text-amber-700">✓ Digital Telehealth Consent Form Executed</p>
                     <p className="text-slate-400 text-[11px]">
                       Timestamp: {new Date(client.consentTimestamp).toLocaleString('en-IN')}
                     </p>
@@ -122,7 +122,7 @@ const ClientCard = ({ clientDetail, onBack, onStartChat }) => {
 
             <div>
               <h3 className="text-sm font-bold text-slate-900 mb-2">Presenting Clinical Concern</h3>
-              <div className="p-4 bg-indigo-50/50 rounded-2xl border border-indigo-100 text-xs text-slate-700 leading-relaxed">
+              <div className="p-4 bg-amber-50/50 rounded-2xl border border-amber-100 text-xs text-slate-700 leading-relaxed">
                 {client.intakeData?.presentingConcern || 'No intake details entered yet.'}
               </div>
             </div>
@@ -141,7 +141,7 @@ const ClientCard = ({ clientDetail, onBack, onStartChat }) => {
                   className="flex items-center justify-between p-4 rounded-xl border border-slate-200 hover:bg-slate-50"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-lg bg-indigo-50 text-indigo-600">
+                    <div className="p-2.5 rounded-lg bg-amber-50 text-orange-500">
                       <Calendar className="w-4 h-4" />
                     </div>
                     <div>
@@ -179,7 +179,7 @@ const ClientCard = ({ clientDetail, onBack, onStartChat }) => {
                   className={`p-4 rounded-2xl border ${
                     note.type === 'private'
                       ? 'bg-amber-50/30 border-amber-200'
-                      : 'bg-emerald-50/30 border-emerald-200'
+                      : 'bg-amber-50/30 border-amber-200'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
@@ -187,7 +187,7 @@ const ClientCard = ({ clientDetail, onBack, onStartChat }) => {
                       className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded-full ${
                         note.type === 'private'
                           ? 'bg-amber-100 text-amber-800'
-                          : 'bg-emerald-100 text-emerald-800'
+                          : 'bg-amber-100 text-amber-800'
                       }`}
                     >
                       {note.type === 'private' ? '🔒 Private Note (Therapist Only)' : '👥 Shared with Client'}
@@ -227,7 +227,7 @@ const ClientCard = ({ clientDetail, onBack, onStartChat }) => {
                   className="flex items-center justify-between p-4 rounded-xl border border-slate-200 bg-white"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-lg bg-emerald-50 text-emerald-600">
+                    <div className="p-2.5 rounded-lg bg-amber-50 text-amber-600">
                       <CreditCard className="w-4 h-4" />
                     </div>
                     <div>
@@ -246,7 +246,7 @@ const ClientCard = ({ clientDetail, onBack, onStartChat }) => {
                       href={`http://localhost:5000/api/payments/invoice/${p._id}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-xs text-indigo-600 font-semibold hover:underline"
+                      className="text-xs text-orange-500 font-semibold hover:underline"
                     >
                       Download PDF
                     </a>

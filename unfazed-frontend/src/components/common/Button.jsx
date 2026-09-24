@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 const Button = ({
   children,
@@ -11,21 +11,21 @@ const Button = ({
   className = '',
   icon: Icon
 }) => {
-  const base = 'inline-flex items-center justify-center font-medium rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer';
+  const base = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer tracking-tight';
 
   const variants = {
-    primary: 'bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-500 shadow-sm shadow-indigo-200',
-    secondary: 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 focus:ring-slate-400',
-    dark: 'bg-slate-900 text-white hover:bg-slate-800 focus:ring-slate-700',
+    primary: 'bg-amber-500 text-white hover:bg-amber-600 focus:ring-amber-400 shadow-sm shadow-amber-900/10 active:scale-[0.98]',
+    secondary: 'bg-white text-stone-700 border border-stone-200 hover:bg-stone-50 focus:ring-stone-400 active:scale-[0.98]',
+    dark: 'bg-stone-900 text-white hover:bg-stone-800 focus:ring-stone-700 active:scale-[0.98]',
     danger: 'bg-rose-600 text-white hover:bg-rose-700 focus:ring-rose-500',
-    success: 'bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-500',
-    ghost: 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 focus:ring-slate-300'
+    success: 'bg-orange-500 text-white hover:bg-orange-600 focus:ring-amber-500',
+    ghost: 'text-stone-600 hover:bg-stone-100 hover:text-stone-900 focus:ring-stone-300'
   };
 
   const sizes = {
-    sm: 'text-xs px-3 py-1.5 gap-1.5',
-    md: 'text-sm px-4 py-2 gap-2',
-    lg: 'text-base px-6 py-3 gap-2.5'
+    sm: 'text-xs px-3.5 py-1.5 gap-1.5',
+    md: 'text-sm px-4.5 py-2.5 gap-2',
+    lg: 'text-base px-6 py-3.5 gap-2.5'
   };
 
   return (

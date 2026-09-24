@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axiosInstance from '../../api/axiosInstance';
 import ChatWindow from '../../components/chat/ChatWindow';
@@ -38,8 +38,8 @@ const ClientPortal = () => {
         {/* Header */}
         <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-emerald-300 text-xs font-semibold mb-2">
-              <Shield className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-semibold mb-2">
+              <Shield className="w-3.5 h-3.5 text-amber-400" />
               <span>Encrypted Client Telehealth Space</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black">Your Care Portal</h1>
@@ -50,7 +50,7 @@ const ClientPortal = () => {
 
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-400">Client ID:</span>
-            <span className="font-mono text-xs text-indigo-300 bg-white/10 px-2 py-1 rounded-lg">
+            <span className="font-mono text-xs text-amber-300 bg-white/10 px-2 py-1 rounded-lg">
               {clientId?.slice(-6) || 'CL-001'}
             </span>
           </div>
@@ -63,10 +63,10 @@ const ClientPortal = () => {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-indigo-600" />
+                  <FileText className="w-5 h-5 text-orange-500" />
                   Shared Takeaways & Plans
                 </h2>
-                <span className="text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                <span className="text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
                   Shared Only
                 </span>
               </div>
@@ -85,7 +85,7 @@ const ClientPortal = () => {
                   sharedNotes.map((note) => (
                     <div
                       key={note._id}
-                      className="p-5 rounded-2xl bg-indigo-50/30 border border-indigo-100 space-y-2 text-xs"
+                      className="p-5 rounded-2xl bg-amber-50/30 border border-amber-100 space-y-2 text-xs"
                     >
                       <div className="flex items-center justify-between">
                         <h4 className="font-bold text-slate-900 text-sm">{note.title}</h4>
@@ -104,7 +104,7 @@ const ClientPortal = () => {
             </div>
 
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-[11px] text-slate-400">
-              <CheckCircle className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+              <CheckCircle className="w-3.5 h-3.5 text-amber-500 shrink-0" />
               <span>Private clinical logs are strictly firewalled and inaccessible to clients.</span>
             </div>
           </div>

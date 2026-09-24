@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import axiosInstance from '../../api/axiosInstance';
 import StatCard from '../../components/analytics/StatCard';
 import RevenueChart from '../../components/analytics/RevenueChart';
@@ -47,21 +47,21 @@ const Analytics = () => {
           subtitle="Processed through gateway"
           icon={DollarSign}
           trend="+18%"
-          color="indigo"
+          color="orange"
         />
         <StatCard
           title="Active Client Base"
           value={metrics?.activeClients || 0}
           subtitle="Currently enrolled clients"
           icon={Users}
-          color="emerald"
+          color="amber"
         />
         <StatCard
           title="No-Show Rate"
           value={`${metrics?.noShowRate || 0}%`}
           subtitle="Of all scheduled sessions"
           icon={AlertTriangle}
-          color={Number(metrics?.noShowRate) > 10 ? 'rose' : 'emerald'}
+          color={Number(metrics?.noShowRate) > 10 ? 'rose' : 'amber'}
         />
         <StatCard
           title="Session Completion"
@@ -80,7 +80,7 @@ const Analytics = () => {
               <h2 className="text-lg font-bold text-slate-900">Monthly Revenue Trend</h2>
               <p className="text-xs text-slate-500">Gross transaction earnings grouped by month</p>
             </div>
-            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-700">
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-orange-600">
               Aggregated from Payments
             </span>
           </div>
@@ -95,8 +95,8 @@ const Analytics = () => {
 
           <div className="space-y-4">
             {[
-              { label: 'Completed', count: metrics?.sessionDistribution?.completed || 0, color: 'bg-emerald-500' },
-              { label: 'Upcoming Scheduled', count: metrics?.sessionDistribution?.scheduled || 0, color: 'bg-indigo-500' },
+              { label: 'Completed', count: metrics?.sessionDistribution?.completed || 0, color: 'bg-amber-500' },
+              { label: 'Upcoming Scheduled', count: metrics?.sessionDistribution?.scheduled || 0, color: 'bg-amber-500' },
               { label: 'No-Shows', count: metrics?.sessionDistribution?.noShows || 0, color: 'bg-rose-500' },
               { label: 'Cancelled', count: metrics?.sessionDistribution?.cancelled || 0, color: 'bg-slate-400' }
             ].map((stat, i) => (
@@ -119,7 +119,7 @@ const Analytics = () => {
               {(clientRetention || []).map((ret, idx) => (
                 <div key={idx} className="flex items-center justify-between text-xs">
                   <span className="text-slate-600 font-medium">{ret.clientName}</span>
-                  <span className="font-bold text-indigo-600">{ret.completedSessions} sessions</span>
+                  <span className="font-bold text-orange-500">{ret.completedSessions} sessions</span>
                 </div>
               ))}
             </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import axiosInstance from '../../api/axiosInstance';
 import Button from '../../components/common/Button';
 import Loader from '../../components/common/Loader';
@@ -108,8 +108,8 @@ const Schedule = () => {
       </div>
 
       {message && (
-        <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-2xl text-xs flex items-center gap-2">
-          <Check className="w-4 h-4 text-emerald-600" />
+        <div className="p-4 bg-amber-50 border border-amber-200 text-amber-800 rounded-2xl text-xs flex items-center gap-2">
+          <Check className="w-4 h-4 text-amber-600" />
           <span>{message}</span>
         </div>
       )}
@@ -119,7 +119,7 @@ const Schedule = () => {
         <div className="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-              <Clock className="w-5 h-5 text-indigo-600" />
+              <Clock className="w-5 h-5 text-orange-500" />
               Weekly Working Hours
             </h2>
             <Button
@@ -142,7 +142,7 @@ const Schedule = () => {
               <select
                 value={availability?.bufferMinutes || 15}
                 onChange={(e) => setAvailability(prev => ({ ...prev, bufferMinutes: Number(e.target.value) }))}
-                className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
               >
                 <option value={10}>10 minutes buffer</option>
                 <option value={15}>15 minutes buffer</option>
@@ -157,7 +157,7 @@ const Schedule = () => {
               <select
                 value={availability?.sessionDurations?.[0] || 60}
                 onChange={(e) => setAvailability(prev => ({ ...prev, sessionDurations: [Number(e.target.value)] }))}
-                className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
               >
                 <option value={45}>45 minutes consultation</option>
                 <option value={60}>60 minutes consultation</option>
@@ -188,7 +188,7 @@ const Schedule = () => {
                       id={`day-${day.num}`}
                       checked={scheduleDay.isWorkingDay}
                       onChange={() => handleToggleDay(day.num)}
-                      className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 cursor-pointer"
+                      className="w-4 h-4 rounded text-orange-500 focus:ring-amber-500 cursor-pointer"
                     />
                     <label htmlFor={`day-${day.num}`} className="text-xs font-bold text-slate-800 cursor-pointer w-24">
                       {day.name}
@@ -201,14 +201,14 @@ const Schedule = () => {
                         type="time"
                         value={slot.startTime}
                         onChange={(e) => handleSlotChange(day.num, 'startTime', e.target.value)}
-                        className="p-1.5 rounded-lg border border-slate-200 text-xs focus:ring-1 focus:ring-indigo-500"
+                        className="p-1.5 rounded-lg border border-slate-200 text-xs focus:ring-1 focus:ring-amber-500"
                       />
                       <span className="text-slate-400">to</span>
                       <input
                         type="time"
                         value={slot.endTime}
                         onChange={(e) => handleSlotChange(day.num, 'endTime', e.target.value)}
-                        className="p-1.5 rounded-lg border border-slate-200 text-xs focus:ring-1 focus:ring-indigo-500"
+                        className="p-1.5 rounded-lg border border-slate-200 text-xs focus:ring-1 focus:ring-amber-500"
                       />
                     </div>
                   ) : (
@@ -233,7 +233,7 @@ const Schedule = () => {
                 sessions.map((session) => (
                   <div
                     key={session._id}
-                    className="p-4 rounded-2xl border border-slate-200 hover:border-indigo-200 bg-slate-50/50 space-y-2.5 text-xs"
+                    className="p-4 rounded-2xl border border-slate-200 hover:border-amber-200 bg-slate-50/50 space-y-2.5 text-xs"
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-bold text-slate-900 text-sm">
@@ -241,10 +241,10 @@ const Schedule = () => {
                       </span>
                       <span className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded-full ${
                         session.status === 'completed'
-                          ? 'bg-emerald-100 text-emerald-800'
+                          ? 'bg-amber-100 text-amber-800'
                           : session.status === 'no_show'
                           ? 'bg-rose-100 text-rose-800'
-                          : 'bg-indigo-100 text-indigo-800'
+                          : 'bg-amber-100 text-orange-700'
                       }`}>
                         {session.status}
                       </span>
@@ -265,7 +265,7 @@ const Schedule = () => {
                         href={session.meetingLink || 'https://meet.jit.si/unfazed-demo'}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-indigo-600 text-white font-semibold text-[11px]"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-orange-500 text-white font-semibold text-[11px]"
                       >
                         <Video className="w-3 h-3" />
                         Join Call
@@ -275,7 +275,7 @@ const Schedule = () => {
                         <>
                           <button
                             onClick={() => handleUpdateStatus(session._id, 'completed')}
-                            className="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-semibold text-[11px] hover:bg-emerald-100 cursor-pointer"
+                            className="px-2 py-1 rounded-lg bg-amber-50 text-amber-700 font-semibold text-[11px] hover:bg-amber-100 cursor-pointer"
                           >
                             Mark Done
                           </button>

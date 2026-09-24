@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Eye, Clock, Phone, Mail, Tag } from 'lucide-react';
 
 const ClientTable = ({ clients = [], onSelectClient }) => {
@@ -27,7 +27,7 @@ const ClientTable = ({ clients = [], onSelectClient }) => {
           <tbody className="divide-y divide-slate-100 text-sm text-slate-700">
             {clients.map((client) => {
               const statusColors = {
-                active: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+                active: 'bg-amber-50 text-amber-700 border-amber-200',
                 inactive: 'bg-slate-100 text-slate-600 border-slate-200',
                 lead: 'bg-amber-50 text-amber-700 border-amber-200'
               };
@@ -35,7 +35,7 @@ const ClientTable = ({ clients = [], onSelectClient }) => {
               return (
                 <tr key={client._id} className="hover:bg-slate-50/60 transition-colors">
                   <td className="py-4 px-6 font-semibold text-slate-900 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-bold text-xs flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-amber-100 text-orange-600 font-bold text-xs flex items-center justify-center shrink-0">
                       {client.name.charAt(0)}
                     </div>
                     <div>
@@ -88,8 +88,8 @@ const ClientTable = ({ clients = [], onSelectClient }) => {
 
                   <td className="py-4 px-6">
                     {client.consentAgreed ? (
-                      <span className="text-xs text-emerald-600 font-semibold flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                      <span className="text-xs text-amber-600 font-semibold flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
                         Signed
                       </span>
                     ) : (
@@ -102,7 +102,7 @@ const ClientTable = ({ clients = [], onSelectClient }) => {
                       onClick={() => onSelectClient(client)}
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
                     >
-                      <Eye className="w-3.5 h-3.5 text-indigo-600" />
+                      <Eye className="w-3.5 h-3.5 text-orange-500" />
                       View Profile
                     </button>
                   </td>

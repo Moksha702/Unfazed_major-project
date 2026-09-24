@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import SoapTemplate from './SoapTemplate';
 import Button from '../common/Button';
 import { Lock, Users, Sparkles, Check } from 'lucide-react';
@@ -83,7 +83,7 @@ const NoteEditor = ({ sessionId, clientId, onSave, onCancel, initialData = null 
                 onClick={() => setType('shared')}
                 className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                   type === 'shared'
-                    ? 'bg-emerald-600 text-white shadow-xs'
+                    ? 'bg-orange-500 text-white shadow-xs'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
@@ -104,7 +104,7 @@ const NoteEditor = ({ sessionId, clientId, onSave, onCancel, initialData = null 
                 onClick={() => handleFormatSelect('freeform')}
                 className={`px-3 py-1.5 text-xs font-bold rounded-lg border transition-all cursor-pointer ${
                   format === 'freeform'
-                    ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs'
+                    ? 'bg-orange-500 text-white border-orange-500 shadow-xs'
                     : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
                 }`}
               >
@@ -115,11 +115,11 @@ const NoteEditor = ({ sessionId, clientId, onSave, onCancel, initialData = null 
                 onClick={() => handleFormatSelect('soap')}
                 className={`px-3 py-1.5 text-xs font-bold rounded-lg border transition-all cursor-pointer flex items-center gap-1 ${
                   format === 'soap'
-                    ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs'
+                    ? 'bg-orange-500 text-white border-orange-500 shadow-xs'
                     : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
                 }`}
               >
-                <Sparkles className="w-3 h-3 text-indigo-400" />
+                <Sparkles className="w-3 h-3 text-amber-400" />
                 SOAP Template
               </button>
             </div>
@@ -136,7 +136,7 @@ const NoteEditor = ({ sessionId, clientId, onSave, onCancel, initialData = null 
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder={type === 'private' ? 'e.g. Session 3 Diagnosis & Symptom Assessment' : 'e.g. Action Items & Reflection'}
-            className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:outline-none"
           />
         </div>
 
@@ -153,7 +153,7 @@ const NoteEditor = ({ sessionId, clientId, onSave, onCancel, initialData = null 
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder="Record therapeutic observations, breakthroughs, or homework assignments..."
-              className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:outline-none"
             />
           </div>
         )}

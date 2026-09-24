@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 const Loader = ({ size = 'md', text = 'Loading...' }) => {
   const sizeClasses = {
@@ -10,7 +10,7 @@ const Loader = ({ size = 'md', text = 'Loading...' }) => {
   return (
     <div className="flex flex-col items-center justify-center p-6 space-y-3">
       <div
-        className={`${sizeClasses[size]} border-indigo-200 border-t-indigo-600 rounded-full animate-spin`}
+        className={`${sizeClasses[size]} border-amber-200 border-t-orange-500 rounded-full animate-spin`}
       />
       {text && <p className="text-sm font-medium text-slate-500">{text}</p>}
     </div>

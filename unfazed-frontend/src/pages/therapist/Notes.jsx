@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import axiosInstance from '../../api/axiosInstance';
 import NoteEditor from '../../components/notes/NoteEditor';
 import Loader from '../../components/common/Loader';
@@ -77,8 +77,8 @@ const Notes = () => {
       </div>
 
       {statusMessage && (
-        <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-2xl text-xs flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+        <div className="p-4 bg-amber-50 border border-amber-200 text-amber-800 rounded-2xl text-xs flex items-center gap-2">
+          <CheckCircle2 className="w-4 h-4 text-amber-600" />
           <span>{statusMessage}</span>
         </div>
       )}
@@ -105,7 +105,7 @@ const Notes = () => {
                     }}
                     className={`w-full text-left p-3.5 rounded-2xl border transition-all cursor-pointer ${
                       isSelected
-                        ? 'border-indigo-600 bg-indigo-50/50 shadow-xs'
+                        ? 'border-orange-500 bg-amber-50/50 shadow-xs'
                         : 'border-slate-100 hover:bg-slate-50'
                     }`}
                   >
@@ -136,7 +136,7 @@ const Notes = () => {
           {selectedSession && (
             <div className="bg-slate-900 text-white rounded-3xl p-6 flex items-center justify-between shadow-sm">
               <div>
-                <span className="text-xs font-semibold text-indigo-300">Session Documentation For</span>
+                <span className="text-xs font-semibold text-amber-300">Session Documentation For</span>
                 <h3 className="text-xl font-bold mt-0.5">{selectedSession.client_id?.name}</h3>
                 <p className="text-xs text-slate-400">
                   {new Date(selectedSession.startTime).toLocaleString('en-IN')}
@@ -149,7 +149,7 @@ const Notes = () => {
                   variant="primary"
                   size="sm"
                   icon={Plus}
-                  className="bg-indigo-500 hover:bg-indigo-600"
+                  className="bg-amber-500 hover:bg-orange-500"
                 >
                   Write Clinical Note
                 </Button>
@@ -181,7 +181,7 @@ const Notes = () => {
                     className={`p-6 rounded-3xl border transition-all ${
                       note.type === 'private'
                         ? 'bg-amber-50/20 border-amber-200'
-                        : 'bg-emerald-50/20 border-emerald-200'
+                        : 'bg-amber-50/20 border-amber-200'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-3">
@@ -189,7 +189,7 @@ const Notes = () => {
                         className={`text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full flex items-center gap-1.5 ${
                           note.type === 'private'
                             ? 'bg-amber-100 text-amber-900 border border-amber-200'
-                            : 'bg-emerald-100 text-emerald-900 border border-emerald-200'
+                            : 'bg-amber-100 text-amber-900 border border-amber-200'
                         }`}
                       >
                         {note.type === 'private' ? (
@@ -199,7 +199,7 @@ const Notes = () => {
                           </>
                         ) : (
                           <>
-                            <Users className="w-3 h-3 text-emerald-700" />
+                            <Users className="w-3 h-3 text-amber-700" />
                             Shared Client Plan (Visible in Portal)
                           </>
                         )}
@@ -214,10 +214,10 @@ const Notes = () => {
 
                     {note.format === 'soap' && note.soapData ? (
                       <div className="bg-white p-4 rounded-2xl border border-slate-100 text-xs space-y-2">
-                        <p><strong className="text-indigo-600">S (Subjective):</strong> {note.soapData.subjective}</p>
-                        <p><strong className="text-indigo-600">O (Objective):</strong> {note.soapData.objective}</p>
-                        <p><strong className="text-indigo-600">A (Assessment):</strong> {note.soapData.assessment}</p>
-                        <p><strong className="text-indigo-600">P (Plan):</strong> {note.soapData.plan}</p>
+                        <p><strong className="text-orange-500">S (Subjective):</strong> {note.soapData.subjective}</p>
+                        <p><strong className="text-orange-500">O (Objective):</strong> {note.soapData.objective}</p>
+                        <p><strong className="text-orange-500">A (Assessment):</strong> {note.soapData.assessment}</p>
+                        <p><strong className="text-orange-500">P (Plan):</strong> {note.soapData.plan}</p>
                       </div>
                     ) : (
                       <div className="bg-white p-4 rounded-2xl border border-slate-100 text-xs text-slate-700 leading-relaxed whitespace-pre-wrap">

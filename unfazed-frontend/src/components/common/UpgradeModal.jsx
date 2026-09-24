@@ -71,9 +71,9 @@ const UpgradeModal = ({ isOpen, onClose, featureReason, recommendedTier = 'growt
               key={tier.id}
               className={`rounded-2xl p-5 border flex flex-col justify-between transition-all ${
                 isTarget
-                  ? 'border-indigo-500 bg-indigo-50/40 shadow-md ring-2 ring-indigo-500'
+                  ? 'border-amber-500 bg-amber-50/40 shadow-md ring-2 ring-amber-400'
                   : isCurrent
-                  ? 'border-emerald-300 bg-emerald-50/20'
+                  ? 'border-orange-300 bg-orange-50/20'
                   : 'border-slate-200 bg-white hover:border-slate-300'
               }`}
             >
@@ -81,12 +81,12 @@ const UpgradeModal = ({ isOpen, onClose, featureReason, recommendedTier = 'growt
                 <div className="flex items-center justify-between">
                   <h4 className="font-bold text-slate-900">{tier.name}</h4>
                   {tier.badge && (
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-600 text-white">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500 text-white">
                       {tier.badge}
                     </span>
                   )}
                   {isCurrent && (
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-600 text-white">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-orange-500 text-white">
                       Active
                     </span>
                   )}
@@ -100,7 +100,7 @@ const UpgradeModal = ({ isOpen, onClose, featureReason, recommendedTier = 'growt
                 <ul className="space-y-2 mb-6">
                   {tier.features.map((feat, idx) => (
                     <li key={idx} className="text-xs text-slate-600 flex items-start gap-2">
-                      <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
                   ))}
@@ -123,7 +123,7 @@ const UpgradeModal = ({ isOpen, onClose, featureReason, recommendedTier = 'growt
       </div>
 
       <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-center gap-2 text-xs text-slate-400">
-        <ShieldCheck className="w-4 h-4 text-emerald-500" />
+        <ShieldCheck className="w-4 h-4 text-amber-500" />
         Config-driven entitlement layer • Instant activation without lock-in
       </div>
     </Modal>

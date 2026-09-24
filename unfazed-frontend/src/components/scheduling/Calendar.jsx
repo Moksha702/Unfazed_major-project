@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Calendar = ({ selectedDate, onSelectDate }) => {
@@ -88,10 +88,10 @@ const Calendar = ({ selectedDate, onSelectDate }) => {
               onClick={() => onSelectDate(dateStr)}
               className={`h-8 w-8 mx-auto rounded-full text-xs font-semibold flex items-center justify-center transition-all ${
                 isSelected
-                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-100'
+                  ? 'bg-orange-500 text-white shadow-md shadow-amber-100'
                   : isPast
                   ? 'text-slate-300 cursor-not-allowed'
-                  : 'text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 cursor-pointer'
+                  : 'text-slate-700 hover:bg-amber-50 hover:text-orange-500 cursor-pointer'
               }`}
             >
               {day}

@@ -62,33 +62,33 @@ const Dashboard = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Branded Link Hero Card */}
-      <div className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-orange-800 via-orange-700 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden">
         <div className="relative z-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-indigo-200 text-xs font-semibold mb-3 border border-white/10">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-amber-200 text-xs font-semibold mb-3 border border-white/10">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span>Practice Management Hub</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-black">Welcome back, {user?.name}!</h1>
-          <p className="text-indigo-200 text-xs sm:text-sm mt-1 max-w-xl">
+          <p className="text-amber-200 text-xs sm:text-sm mt-1 max-w-xl">
             Your single branded link is live. Share it with prospective clients on WhatsApp, Instagram, or email.
           </p>
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <div className="flex items-center bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-white/10 text-xs text-white">
-              <span className="font-mono text-indigo-300">unfazed.in/{user?.slug}</span>
+              <span className="font-mono text-amber-300">unfazed.in/{user?.slug}</span>
             </div>
             <button
               onClick={handleCopyLink}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white text-indigo-950 font-bold text-xs hover:bg-slate-100 transition-colors cursor-pointer shadow-sm"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white text-stone-950 font-bold text-xs hover:bg-slate-100 transition-colors cursor-pointer shadow-sm"
             >
-              {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+              {copied ? <Check className="w-3.5 h-3.5 text-amber-600" /> : <Copy className="w-3.5 h-3.5" />}
               {copied ? 'Copied!' : 'Copy Link'}
             </button>
             <a
               href={`/${user?.slug}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-600/60 hover:bg-indigo-600 text-white font-semibold text-xs border border-white/10 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-500/60 hover:bg-orange-500 text-white font-semibold text-xs border border-white/10 transition-colors"
             >
               <ExternalLink className="w-3.5 h-3.5" />
               Visit Public Page
@@ -99,7 +99,7 @@ const Dashboard = () => {
         {/* Client Entitlement Meter */}
         <div className="relative z-10 bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/10 w-full md:w-72 shrink-0">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-semibold text-indigo-200">Active Client Capacity</span>
+            <span className="text-xs font-semibold text-amber-200">Active Client Capacity</span>
             <span className="text-xs font-black text-white">
               {clientUsage.current} / {clientUsage.max}
             </span>
@@ -108,17 +108,17 @@ const Dashboard = () => {
           <div className="w-full bg-white/20 rounded-full h-2 overflow-hidden mb-3">
             <div
               className={`h-full rounded-full transition-all ${
-                clientUsage.percentage > 80 ? 'bg-amber-400' : 'bg-emerald-400'
+                clientUsage.percentage > 80 ? 'bg-amber-400' : 'bg-amber-400'
               }`}
               style={{ width: `${Math.min(100, clientUsage.percentage)}%` }}
             />
           </div>
 
           <div className="flex items-center justify-between text-[11px]">
-            <span className="text-indigo-200 capitalize">{entitlements?.tierName || 'Free Plan'}</span>
+            <span className="text-amber-200 capitalize">{entitlements?.tierName || 'Free Plan'}</span>
             <button
               onClick={() => setShowUpgradeModal(true)}
-              className="text-white font-bold underline hover:text-indigo-200 cursor-pointer"
+              className="text-white font-bold underline hover:text-amber-200 cursor-pointer"
             >
               Upgrade Tier
             </button>
@@ -133,14 +133,14 @@ const Dashboard = () => {
           value={summary?.todaySessions || 0}
           subtitle="sessions scheduled today"
           icon={Calendar}
-          color="indigo"
+          color="orange"
         />
         <StatCard
           title="Active Clients"
           value={summary?.activeClients || 0}
           subtitle={`under ${entitlements?.tierName || 'Free'} limits`}
           icon={Users}
-          color="emerald"
+          color="amber"
         />
         <StatCard
           title="Total Gross Earnings"
@@ -169,7 +169,7 @@ const Dashboard = () => {
             </div>
             <Link
               to="/dashboard/schedule"
-              className="text-xs font-bold text-indigo-600 hover:text-indigo-700 flex items-center gap-1"
+              className="text-xs font-bold text-orange-500 hover:text-orange-600 flex items-center gap-1"
             >
               <span>Manage Schedule</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -189,10 +189,10 @@ const Dashboard = () => {
               summary.upcomingSessions.map((session) => (
                 <div
                   key={session._id}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl border border-slate-200 hover:border-indigo-200 hover:bg-slate-50/50 transition-all gap-4"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl border border-slate-200 hover:border-amber-200 hover:bg-slate-50/50 transition-all gap-4"
                 >
                   <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 font-bold flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-amber-50 text-orange-600 font-bold flex items-center justify-center shrink-0">
                       {session.client_id?.name?.charAt(0) || 'C'}
                     </div>
                     <div>
@@ -216,7 +216,7 @@ const Dashboard = () => {
                       href={session.meetingLink || 'https://meet.jit.si/unfazed-demo'}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-indigo-600 text-white font-bold text-xs hover:bg-indigo-700 shadow-sm transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-orange-500 text-white font-bold text-xs hover:bg-orange-600 shadow-sm transition-colors"
                     >
                       <Video className="w-3.5 h-3.5" />
                       Join Video Call
@@ -233,10 +233,10 @@ const Dashboard = () => {
           <div>
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                <BellRing className="w-5 h-5 text-indigo-600" />
+                <BellRing className="w-5 h-5 text-orange-500" />
                 Notification Stream
               </h2>
-              <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+              <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
                 Stub Live
               </span>
             </div>
@@ -257,7 +257,7 @@ const Dashboard = () => {
                       </span>
                     </div>
                     <p className="text-[11px] text-slate-600 line-clamp-2">{log.messageBody}</p>
-                    <span className="inline-block mt-1 text-[9px] font-bold text-emerald-700 bg-emerald-100/60 px-1.5 py-0.2 rounded">
+                    <span className="inline-block mt-1 text-[9px] font-bold text-amber-700 bg-amber-100/60 px-1.5 py-0.2 rounded">
                       {log.eventType}
                     </span>
                   </div>

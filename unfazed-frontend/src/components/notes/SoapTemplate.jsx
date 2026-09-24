@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 const SoapTemplate = ({ soapData, onChange }) => {
   const fields = [
@@ -20,7 +20,7 @@ const SoapTemplate = ({ soapData, onChange }) => {
             value={soapData[f.key] || ''}
             onChange={(e) => onChange(f.key, e.target.value)}
             placeholder={f.placeholder}
-            className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-all placeholder:text-slate-400"
+            className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:outline-none transition-all placeholder:text-slate-400"
           />
         </div>
       ))}

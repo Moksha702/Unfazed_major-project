@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axiosInstance from '../../api/axiosInstance';
 import Hero from '../../components/profile/Hero';
@@ -151,7 +151,7 @@ const BookingPage = () => {
         <div className="bg-white p-8 rounded-3xl border border-slate-200 text-center max-w-md shadow-sm">
           <h2 className="text-xl font-bold text-slate-800 mb-2">Practice Link Unavailable</h2>
           <p className="text-xs text-slate-500 mb-6">{error || 'This therapist link does not exist.'}</p>
-          <Link to="/login" className="text-xs font-bold text-indigo-600 hover:underline">
+          <Link to="/login" className="text-xs font-bold text-orange-500 hover:underline">
             Are you a therapist? Log in here
           </Link>
         </div>
@@ -223,14 +223,14 @@ const BookingPage = () => {
         {/* Step 2: Intake Form & Consent */}
         {bookingStep === 'intake' && (
           <form onSubmit={handleIntakeSubmit} className="space-y-4">
-            <div className="p-3 bg-indigo-50 border border-indigo-100 rounded-xl text-xs text-indigo-900 flex items-center justify-between">
+            <div className="p-3 bg-amber-50 border border-amber-100 rounded-xl text-xs text-orange-800 flex items-center justify-between">
               <span>
                 Selected Slot: <strong>{new Date(selectedSlot?.startTime).toLocaleString('en-IN')}</strong>
               </span>
               <button
                 type="button"
                 onClick={() => setBookingStep('calendar')}
-                className="text-indigo-600 underline font-semibold"
+                className="text-orange-500 underline font-semibold"
               >
                 Change
               </button>
@@ -247,7 +247,7 @@ const BookingPage = () => {
                   value={clientForm.name}
                   onChange={(e) => setClientForm({ ...clientForm, name: e.target.value })}
                   placeholder="e.g. Priya Sharma"
-                  className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 />
               </div>
 
@@ -261,7 +261,7 @@ const BookingPage = () => {
                   value={clientForm.email}
                   onChange={(e) => setClientForm({ ...clientForm, email: e.target.value })}
                   placeholder="priya@gmail.com"
-                  className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 />
               </div>
             </div>
@@ -277,7 +277,7 @@ const BookingPage = () => {
                   value={clientForm.phone}
                   onChange={(e) => setClientForm({ ...clientForm, phone: e.target.value })}
                   placeholder="+91 98765 43210"
-                  className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 />
               </div>
 
@@ -290,7 +290,7 @@ const BookingPage = () => {
                   value={clientForm.age}
                   onChange={(e) => setClientForm({ ...clientForm, age: e.target.value })}
                   placeholder="28"
-                  className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 />
               </div>
             </div>
@@ -304,7 +304,7 @@ const BookingPage = () => {
                 value={clientForm.presentingConcern}
                 onChange={(e) => setClientForm({ ...clientForm, presentingConcern: e.target.value })}
                 placeholder="Briefly describe what you would like to explore or focus on..."
-                className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
             </div>
 
@@ -316,7 +316,7 @@ const BookingPage = () => {
                 required
                 checked={clientForm.consentAgreed}
                 onChange={(e) => setClientForm({ ...clientForm, consentAgreed: e.target.checked })}
-                className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 mt-0.5 cursor-pointer"
+                className="w-4 h-4 rounded text-orange-500 focus:ring-amber-500 mt-0.5 cursor-pointer"
               />
               <label htmlFor="consentCheck" className="text-xs text-slate-600 cursor-pointer">
                 <strong>Informed Consent Agreement:</strong> I acknowledge that telehealth consultations are confidential and governed by clinical guidelines. I consent to receive appointment alerts via WhatsApp/Email.
@@ -349,7 +349,7 @@ const BookingPage = () => {
         {/* Step 4: Booking Confirmed */}
         {bookingStep === 'confirmed' && (
           <div className="text-center p-6 space-y-5">
-            <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-md">
+            <div className="w-16 h-16 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mx-auto shadow-md">
               <CheckCircle2 className="w-8 h-8" />
             </div>
 
@@ -369,7 +369,7 @@ const BookingPage = () => {
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Link
                 to={`/portal/${bookedResult?.client?.id || 'client-demo'}`}
-                className="flex-1 py-3 px-4 rounded-xl bg-indigo-600 text-white font-bold text-xs hover:bg-indigo-700 text-center shadow-md shadow-indigo-100"
+                className="flex-1 py-3 px-4 rounded-xl bg-orange-500 text-white font-bold text-xs hover:bg-orange-600 text-center shadow-md shadow-amber-100"
               >
                 Go to Client Portal & Live Chat
               </Link>

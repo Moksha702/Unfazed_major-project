@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import Button from '../../components/common/Button';
@@ -53,7 +53,7 @@ const Register = () => {
     <div className="min-h-screen bg-slate-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         <Link to="/" className="inline-flex items-center gap-2 mb-4">
-          <div className="w-10 h-10 rounded-2xl bg-indigo-600 flex items-center justify-center text-white font-black text-2xl shadow-lg shadow-indigo-100">
+          <div className="w-10 h-10 rounded-2xl bg-orange-500 flex items-center justify-center text-white font-black text-2xl shadow-lg shadow-amber-100">
             %
           </div>
           <span className="text-2xl font-black tracking-tight text-slate-900">UNFAZED</span>
@@ -85,10 +85,10 @@ const Register = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Dr. Ananya Sharma"
-                className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:outline-none"
               />
               <div className="mt-1.5 flex items-center gap-1.5 text-[11px] text-slate-500">
-                <Globe className="w-3.5 h-3.5 text-indigo-500" />
+                <Globe className="w-3.5 h-3.5 text-amber-500" />
                 <span>Your public branded link will be: <strong>unfazed.in/{previewSlug}</strong></span>
               </div>
             </div>
@@ -104,7 +104,7 @@ const Register = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="ananya@therapy.com"
-                className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:outline-none"
               />
             </div>
 
@@ -119,7 +119,7 @@ const Register = () => {
                 value={formData.password}
                 onChange={handleChange}
                 placeholder="••••••••"
-                className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:outline-none"
               />
             </div>
 
@@ -133,7 +133,7 @@ const Register = () => {
                   name="qualifications"
                   value={formData.qualifications}
                   onChange={handleChange}
-                  className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                  className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
 
@@ -146,7 +146,7 @@ const Register = () => {
                   name="hourlyRate"
                   value={formData.hourlyRate}
                   onChange={handleChange}
-                  className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                  className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
             </div>
@@ -161,7 +161,7 @@ const Register = () => {
                 value={formData.specializations}
                 onChange={handleChange}
                 placeholder="CBT, Anxiety, Trauma, Mindfulness"
-                className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:outline-none"
               />
             </div>
 
@@ -178,7 +178,7 @@ const Register = () => {
 
           <div className="mt-6 text-center text-xs text-slate-500">
             Already registered?{' '}
-            <Link to="/login" className="font-bold text-indigo-600 hover:text-indigo-500">
+            <Link to="/login" className="font-bold text-orange-500 hover:text-amber-500">
               Sign in to your account
             </Link>
           </div>

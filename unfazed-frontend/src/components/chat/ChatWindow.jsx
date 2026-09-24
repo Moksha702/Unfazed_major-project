@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
 import { Send, MessageSquare, Shield, Smile } from 'lucide-react';
 import MessageBubble from './MessageBubble';
@@ -101,20 +101,20 @@ const ChatWindow = ({ roomId, senderId, senderName, senderRole = 'therapist', ti
       {/* Chat Header */}
       <div className="p-4 bg-white border-b border-slate-200 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-xl bg-indigo-50 text-indigo-600">
+          <div className="p-2 rounded-xl bg-amber-50 text-orange-500">
             <MessageSquare className="w-4 h-4" />
           </div>
           <div>
             <h3 className="text-xs font-bold text-slate-900">{title}</h3>
             <p className="text-[10px] text-slate-400 flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
               End-to-End Encrypted Room: {roomId}
             </p>
           </div>
         </div>
 
         <div className="flex items-center gap-1 text-[11px] text-slate-400">
-          <Shield className="w-3.5 h-3.5 text-emerald-500" />
+          <Shield className="w-3.5 h-3.5 text-amber-500" />
           <span>Protected</span>
         </div>
       </div>
@@ -137,7 +137,7 @@ const ChatWindow = ({ roomId, senderId, senderName, senderRole = 'therapist', ti
         )}
 
         {otherUserTyping && (
-          <div className="text-[10px] text-indigo-600 font-medium italic px-2 py-1 animate-pulse">
+          <div className="text-[10px] text-orange-500 font-medium italic px-2 py-1 animate-pulse">
             {otherUserTyping}
           </div>
         )}
@@ -151,7 +151,7 @@ const ChatWindow = ({ roomId, senderId, senderName, senderRole = 'therapist', ti
           value={inputText}
           onChange={handleInputChange}
           placeholder="Type a clinical or support message..."
-          className="flex-1 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50/50"
+          className="flex-1 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-slate-50/50"
         />
         <Button
           type="submit"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import axiosInstance from '../../api/axiosInstance';
 import ClientTable from '../../components/crm/ClientTable';
 import ClientCard from '../../components/crm/ClientCard';
@@ -160,7 +160,7 @@ const Clients = () => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by client name, email..."
-            className="w-full text-xs pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full text-xs pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
         </div>
 
@@ -169,7 +169,7 @@ const Clients = () => {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="text-xs p-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
+            className="text-xs p-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white"
           >
             <option value="all">All Statuses</option>
             <option value="active">Active Clients</option>
@@ -205,7 +205,7 @@ const Clients = () => {
               required
               value={newClientData.name}
               onChange={(e) => setNewClientData({ ...newClientData, name: e.target.value })}
-              className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
               placeholder="e.g. Vikram Singhania"
             />
           </div>
@@ -219,7 +219,7 @@ const Clients = () => {
               required
               value={newClientData.email}
               onChange={(e) => setNewClientData({ ...newClientData, email: e.target.value })}
-              className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
               placeholder="vikram@example.com"
             />
           </div>
@@ -232,7 +232,7 @@ const Clients = () => {
               type="text"
               value={newClientData.phone}
               onChange={(e) => setNewClientData({ ...newClientData, phone: e.target.value })}
-              className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
               placeholder="+91 98765 43210"
             />
           </div>
@@ -245,7 +245,7 @@ const Clients = () => {
               type="text"
               value={newClientData.tags}
               onChange={(e) => setNewClientData({ ...newClientData, tags: e.target.value })}
-              className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
               placeholder="Anxiety, Bi-weekly, Student"
             />
           </div>
@@ -258,7 +258,7 @@ const Clients = () => {
               rows={3}
               value={newClientData.presentingConcern}
               onChange={(e) => setNewClientData({ ...newClientData, presentingConcern: e.target.value })}
-              className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
               placeholder="Brief summary of primary symptoms or reason for seeking therapy..."
             />
           </div>

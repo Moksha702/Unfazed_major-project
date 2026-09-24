@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { CreditCard, ShieldCheck, CheckCircle2, AlertCircle } from 'lucide-react';
 import Button from '../common/Button';
 import axiosInstance from '../../api/axiosInstance';
@@ -60,7 +60,7 @@ const CheckoutForm = ({
   if (paymentSuccessData) {
     return (
       <div className="text-center p-6 space-y-4">
-        <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+        <div className="w-16 h-16 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mx-auto">
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <h3 className="text-lg font-bold text-slate-900">Payment Successful!</h3>
@@ -72,7 +72,7 @@ const CheckoutForm = ({
             href={`http://localhost:5000/api/payments/invoice/${paymentSuccessData.payment._id}`}
             target="_blank"
             rel="noreferrer"
-            className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl bg-indigo-600 text-white text-xs font-bold hover:bg-indigo-700 shadow-sm"
+            className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl bg-orange-500 text-white text-xs font-bold hover:bg-orange-600 shadow-sm"
           >
             Download GST Tax Invoice (PDF)
           </a>
@@ -99,12 +99,12 @@ const CheckoutForm = ({
         </div>
         <div className="flex items-center justify-between font-black text-slate-900 text-base pt-2 border-t border-slate-200">
           <span>Total Payable</span>
-          <span className="text-indigo-600">₹{amount}</span>
+          <span className="text-orange-500">₹{amount}</span>
         </div>
       </div>
 
-      <div className="p-3 bg-indigo-50/60 rounded-xl border border-indigo-100 flex items-center gap-2.5 text-xs text-indigo-900">
-        <ShieldCheck className="w-5 h-5 text-indigo-600 shrink-0" />
+      <div className="p-3 bg-amber-50/60 rounded-xl border border-amber-100 flex items-center gap-2.5 text-xs text-orange-800">
+        <ShieldCheck className="w-5 h-5 text-orange-500 shrink-0" />
         <span>Secured via Razorpay Payment Gateway (UPI / Cards / NetBanking).</span>
       </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import Button from '../../components/common/Button';
@@ -36,7 +36,7 @@ const Login = () => {
     <div className="min-h-screen bg-slate-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         <Link to="/" className="inline-flex items-center gap-2 mb-4">
-          <div className="w-10 h-10 rounded-2xl bg-indigo-600 flex items-center justify-center text-white font-black text-2xl shadow-lg shadow-indigo-100">
+          <div className="w-10 h-10 rounded-2xl bg-orange-500 flex items-center justify-center text-white font-black text-2xl shadow-lg shadow-amber-100">
             %
           </div>
           <span className="text-2xl font-black tracking-tight text-slate-900">UNFAZED</span>
@@ -50,18 +50,18 @@ const Login = () => {
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4">
         <div className="bg-white py-8 px-6 shadow-xl shadow-slate-100 sm:rounded-3xl border border-slate-200">
           {/* Quick Demo Credentials Autofill Banner */}
-          <div className="mb-6 p-4 bg-indigo-50 border border-indigo-100 rounded-2xl flex items-center justify-between">
+          <div className="mb-6 p-4 bg-amber-50 border border-amber-100 rounded-2xl flex items-center justify-between">
             <div>
-              <p className="text-xs font-bold text-indigo-900 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+              <p className="text-xs font-bold text-orange-800 flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-orange-500" />
                 Demo Credentials Available
               </p>
-              <p className="text-[11px] text-indigo-700 mt-0.5">Dr. Ananya Sharma (Growth Tier)</p>
+              <p className="text-[11px] text-orange-600 mt-0.5">Dr. Ananya Sharma (Growth Tier)</p>
             </div>
             <button
               type="button"
               onClick={handleDemoFill}
-              className="text-xs font-bold px-3 py-1.5 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 cursor-pointer transition-colors"
+              className="text-xs font-bold px-3 py-1.5 rounded-lg bg-orange-500 text-white hover:bg-orange-600 cursor-pointer transition-colors"
             >
               Fill Demo
             </button>
@@ -85,7 +85,7 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="dr.name@practice.com"
-                className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:outline-none"
               />
             </div>
 
@@ -99,7 +99,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full text-xs p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:outline-none"
               />
             </div>
 
@@ -116,7 +116,7 @@ const Login = () => {
 
           <div className="mt-6 text-center text-xs text-slate-500">
             Don't have an account?{' '}
-            <Link to="/register" className="font-bold text-indigo-600 hover:text-indigo-500">
+            <Link to="/register" className="font-bold text-orange-500 hover:text-amber-500">
               Create a free therapist profile
             </Link>
           </div>
